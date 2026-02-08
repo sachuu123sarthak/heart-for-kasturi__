@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kasturi ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:radial-gradient(circle at top,#2b004f,#000);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND NAME */
+.bg-text{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+.bg-text span{
+  position:absolute;
+  font-size:90px;
+  font-weight:700;
+  color:rgba(255,182,219,0.06);
+  white-space:nowrap;
+  animation:drift linear infinite;
+}
+@keyframes drift{
+  from{transform:translateX(-120%);}
+  to{transform:translateX(120%);}
+}
+
+/* SECTION */
+section{
+  min-height:100vh;
+  padding:90px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.glass{
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(18px);
+  border-radius:30px;
+  padding:40px;
+  max-width:900px;
+  box-shadow:0 0 40px rgba(255,133,194,0.25);
+}
+
+h1,h2{
+  color:#ffb3da;
+  margin-bottom:25px;
+}
+
+p{
+  font-size:18px;
+  line-height:1.9;
+  margin-bottom:20px;
+}
+
+/* NEXT BUTTON */
+.next-btn{
+  margin-top:20px;
+  padding:12px 32px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff4d6d,#ff85a1);
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+}
+
+/* FLOATING */
+.floating span{
+  position:fixed;
+  bottom:-40px;
+  font-size:22px;
+  animation:float linear infinite;
+  opacity:0.8;
+  z-index:1;
+}
+@keyframes float{
+  0%{transform:translateY(0) scale(0.7);opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translateY(-120vh) scale(1.5);opacity:0;}
+}
+
+/* JOURNEY */
+.journey{
+  position:relative;
+  max-width:600px;
+  width:100%;
+  height:120px;
+  margin-top:25px;
+}
+.city{position:absolute;top:0;font-size:14px;color:#ffd6ea;}
+#munger{left:0;}
+#orissa{right:0;}
+.path{
+  position:absolute;top:50px;width:100%;height:2px;
+  background:rgba(255,255,255,0.3);
+}
+.heart-travel{
+  position:absolute;top:35px;font-size:26px;
+  animation:travel 6s linear infinite;
+}
+@keyframes travel{
+  0%{left:0;opacity:0;}
+  10%{opacity:1;}
+  90%{opacity:1;}
+  100%{left:95%;opacity:0;}
+}
+
+/* COUNTDOWN */
+.countdown{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.time-box{
+  background:rgba(255,255,255,0.15);
+  padding:15px 22px;
+  border-radius:18px;
+  min-width:90px;
+}
+.time-box h3{
+  font-size:30px;
+  color:#ff85c2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-text" id="bgText"></div>
+<div class="floating" id="floating"></div>
+
+<!-- PAGE 1 -->
+<section>
+<div class="glass">
+<h1>Kasturi ❤️</h1>
+<p>
+Some names don’t need explanation.  
+They carry comfort, warmth, and a strange sense of belonging.
+Your name feels like home, even from miles away.
+</p>
+<button class="next-btn" onclick="nextPage()">Next ➝</button>
+</div>
+</section>
+
+<!-- PAGE 2 -->
+<section>
+<div class="glass">
+<h2>Long Distance</h2>
+<p>
+From Munger, Bihar to Orissa, love learned patience.
+It learned how to survive without touch, how to grow without presence,
+and how to stay strong even when days felt heavy.
+</p>
+<button class="next-btn" onclick="nextPage()">Next ➝</button>
+</div>
+</section>
+
+<!-- PAGE 3 -->
+<section>
+<div class="glass">
+<h2>Our Journey ✈️</h2>
+<p>
+Every thought travels faster than any train.
+Every feeling crosses states without asking permission.
+</p>
+<div class="journey">
+  <div class="city" id="munger">Munger, Bihar</div>
+  <div class="city" id="orissa">Orissa</div>
+  <div class="path"></div>
+  <div class="heart-travel">❤️</div>
+</div>
+<button class="next-btn" onclick="nextPage()">Next ➝</button>
+</div>
+</section>
+
+<!-- PAGE 4 -->
+<section>
+<div class="glass">
+<h2>Fights</h2>
+<p>
+We fight sometimes, and that’s real.
+But after every argument, love stays —
+not louder, but deeper.
+</p>
+<button class="next-btn" onclick="nextPage()">Next ➝</button>
+</div>
+</section>
+
+<!-- PAGE 5 -->
+<section>
+<div class="glass">
+<h2>Comfort</h2>
+<p>
+You are the place my mind rests when everything feels too much.
+Not a location. Not a moment.
+Just you.
+</p>
+<button class="next-btn" onclick="nextPage()">Next ➝</button>
+</div>
+</section>
+
+<!-- PAGE 6 -->
+<section>
+<div class="glass">
+<h2>Love Languages 🌍</h2>
+<p>
+English: I love you ❤️<br>
+Hindi: मैं तुमसे प्यार करता हूँ ❤️<br>
+Bhojpuri: हम तोहसे बहुत प्यार करतानी ❤️<br>
+Odia: ମୁଁ ତୁମକୁ ଭଲ ପାଏ ❤️<br>
+Bengali: আমি তোমাকে ভালোবাসি ❤️
+</p>
+<button class="next-btn" onclick="nextPage()">Next ➝</button>
+</div>
+</section>
+
+<!-- PAGE 7 -->
+<section>
+<div class="glass">
+<h2>Birthday Countdown 🎂</h2>
+<p>Counting every second until 17 August 2025</p>
+<div class="countdown">
+  <div class="time-box"><h3 id="bDays">0</h3>Days</div>
+  <div class="time-box"><h3 id="bHours">0</h3>Hours</div>
+  <div class="time-box"><h3 id="bMinutes">0</h3>Minutes</div>
+  <div class="time-box"><h3 id="bSeconds">0</h3>Seconds</div>
+</div>
+<button class="next-btn" onclick="nextPage()">Next ➝</button>
+</div>
+</section>
+
+<!-- PAGE 8 -->
+<section>
+<div class="glass">
+<h2>Meeting Countdown 💫</h2>
+<p>Until 25 October 2025 — when distance ends.</p>
+<div class="countdown">
+  <div class="time-box"><h3 id="mDays">0</h3>Days</div>
+  <div class="time-box"><h3 id="mHours">0</h3>Hours</div>
+  <div class="time-box"><h3 id="mMinutes">0</h3>Minutes</div>
+  <div class="time-box"><h3 id="mSeconds">0</h3>Seconds</div>
+</div>
+<button class="next-btn" onclick="nextPage()">Next ➝</button>
+</div>
+</section>
+
+<!-- EXTRA EMOTIONAL PAGES (9–30) -->
+<script>
+for(let i=9;i<=30;i++){
+  document.write(`
+  <section>
+    <div class="glass">
+      <h2>Always Us</h2>
+      <p>
+      Even on days when words fail,
+      even when distance feels loud,
+      I choose you.
+      Not once — always.
+      </p>
+      <button class="next-btn" onclick="nextPage()">Next ➝</button>
+    </div>
+  </section>
+  `);
+}
+</script>
+
+<script>
+/* NEXT PAGE */
+function nextPage(){
+  window.scrollBy({top:window.innerHeight,behavior:'smooth'});
+}
+
+/* FLOATING */
+const floating=document.getElementById("floating");
+const emojis=["❤️","✨","⭐","💖"];
+setInterval(()=>{
+  const s=document.createElement("span");
+  s.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+  s.style.left=Math.random()*100+"vw";
+  s.style.animationDuration=(6+Math.random()*6)+"s";
+  floating.appendChild(s);
+  setTimeout(()=>s.remove(),12000);
+},300);
+
+/* BACKGROUND NAME */
+const bg=document.getElementById("bgText");
+for(let i=0;i<20;i++){
+  const t=document.createElement("span");
+  t.innerText="KASTURI";
+  t.style.top=Math.random()*100+"vh";
+  t.style.animationDuration=(20+Math.random()*30)+"s";
+  bg.appendChild(t);
+}
+
+/* BIRTHDAY COUNTDOWN */
+const bday=new Date("2025-08-17T00:00:00").getTime();
+const meet=new Date("2025-10-25T00:00:00").getTime();
+
+setInterval(()=>{
+  const now=new Date().getTime();
+
+  let bd=bday-now;
+  if(bd>0){
+    bDays.innerText=Math.floor(bd/(1000*60*60*24));
+    bHours.innerText=Math.floor((bd/(1000*60*60))%24);
+    bMinutes.innerText=Math.floor((bd/(1000*60))%60);
+    bSeconds.innerText=Math.floor((bd/1000)%60);
+  }
+
+  let md=meet-now;
+  if(md>0){
+    mDays.innerText=Math.floor(md/(1000*60*60*24));
+    mHours.innerText=Math.floor((md/(1000*60*60))%24);
+    mMinutes.innerText=Math.floor((md/(1000*60))%60);
+    mSeconds.innerText=Math.floor((md/1000)%60);
+  }
+},1000);
+</script>
+
+</body>
+</html>
