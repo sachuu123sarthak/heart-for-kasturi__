@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kasturi ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{
+  background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+  color:white;
+  overflow:hidden;
+}
+.page{
+  display:none;
+  height:100vh;
+  width:100vw;
+  padding:30px;
+  text-align:center;
+}
+.page.active{display:block;}
+
+h1{font-size:2.5em;margin-bottom:15px;}
+p{font-size:1.1em;line-height:1.8;margin-bottom:15px;}
+
+button{
+  padding:12px 25px;
+  font-size:1em;
+  background:#ff4b5c;
+  border:none;
+  border-radius:25px;
+  color:white;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+input{
+  padding:10px;
+  width:80px;
+  font-size:1em;
+  border-radius:10px;
+  border:none;
+}
+
+.bg-name{
+  position:fixed;
+  font-size:80px;
+  opacity:0.05;
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+
+/* Hearts */
+.heart{
+  position:absolute;
+  color:#ff4b5c;
+  font-size:20px;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(100vh);opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translateY(-10vh);opacity:0;}
+}
+
+/* Stars */
+.star{
+  position:absolute;
+  color:#fff;
+  font-size:10px;
+  animation:twinkle 4s infinite;
+}
+@keyframes twinkle{
+  0%,100%{opacity:0.2;}
+  50%{opacity:1;}
+}
+
+/* Plane */
+.plane{
+  font-size:40px;
+  animation:fly 6s linear infinite;
+}
+@keyframes fly{
+  0%{transform:translateX(-100%);}
+  100%{transform:translateX(100vw);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-name">KASTURI</div>
+
+<!-- PAGE 1 -->
+<div class="page active">
+<h1>Hi Kasturi ❤️</h1>
+<p>This is not just a website.  
+This is my heart written in HTML, CSS and JavaScript…  
+just for you.</p>
+<button onclick="nextPage()">Next</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+<h1>Our Story</h1>
+<p>We fight.  
+We misunderstand.  
+Sometimes we go silent.</p>
+<p>But after everything…  
+we always come back to each other.</p>
+<button onclick="nextPage()">Next</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+<h1>Long Distance 🫂</h1>
+<p>You are in Odisha.  
+I am in Munger, Bihar.</p>
+<p>Miles apart…  
+but hearts synced.</p>
+<div class="plane">✈️ Munger ➜ Odisha</div>
+<button onclick="nextPage()">Next</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+<h1>You are my comfort 🤍</h1>
+<p>When life hits hard,  
+your name feels like home.</p>
+<p>You are not just my girlfriend.  
+You are my safe place.</p>
+<button onclick="nextPage()">Next</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+<h1>I Love You 🌍</h1>
+<p>English: I Love You</p>
+<p>Hindi: मैं तुमसे प्यार करता हूँ</p>
+<p>Bhojpuri: हम तोहसे प्यार करेनी</p>
+<p>Odia: ମୁଁ ତୁମକୁ ଭଲ ପାଏ</p>
+<p>Bengali: আমি তোমাকে ভালোবাসি</p>
+<button onclick="nextPage()">Next</button>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page">
+<h1>Type a number 💌</h1>
+<p>Enter 1–100</p>
+<input id="num" type="number" min="1" max="100">
+<br>
+<button onclick="showLove()">Show Love</button>
+<div id="loveBox"></div>
+<button onclick="nextPage()">Next</button>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page">
+<h1>Birthday Countdown 🎂</h1>
+<p id="bday"></p>
+<button onclick="nextPage()">Next</button>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page">
+<h1>1 Year Anniversary 💞</h1>
+<p id="anniv"></p>
+<button onclick="nextPage()">Next</button>
+</div>
+
+<!-- PAGE 9–20 -->
+<div class="page">
+<h1>Forever</h1>
+<p>No matter how many pages this website has…  
+my love for you has no last page.</p>
+<p>Always yours,  
+Sachin ❤️</p>
+</div>
+
+<script>
+let pages=document.querySelectorAll('.page');
+let index=0;
+function nextPage(){
+  pages[index].classList.remove('active');
+  index++;
+  if(index>=pages.length) index=pages.length-1;
+  pages[index].classList.add('active');
+}
+
+/* Hearts & Stars */
+setInterval(()=>{
+  let h=document.createElement('div');
+  h.className='heart';
+  h.innerHTML='❤️';
+  h.style.left=Math.random()*100+'vw';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},300);
+
+setInterval(()=>{
+  let s=document.createElement('div');
+  s.className='star';
+  s.innerHTML='⭐';
+  s.style.left=Math.random()*100+'vw';
+  s.style.top=Math.random()*100+'vh';
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),4000);
+},500);
+
+/* Love generator */
+function showLove(){
+  let n=document.getElementById('num').value;
+  let box=document.getElementById('loveBox');
+  box.innerHTML='';
+  for(let i=0;i<n;i++){
+    box.innerHTML+='I love you ❤️<br>';
+  }
+}
+
+/* Countdown */
+function countdown(date,id){
+  let x=setInterval(()=>{
+    let d=new Date(date)-new Date();
+    if(d<0){document.getElementById(id).innerHTML="It's the day ❤️";return;}
+    let days=Math.floor(d/(1000*60*60*24));
+    document.getElementById(id).innerHTML=days+" days left";
+  },1000);
+}
+countdown("August 17, 2026", "bday");
+countdown("October 25, 2026", "anniv");
+</script>
+
+</body>
+</html>
